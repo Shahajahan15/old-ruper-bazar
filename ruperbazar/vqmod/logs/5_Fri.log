@@ -1,0 +1,45 @@
+---------- Date: 2016-05-13 12:59:51 ~ IP : ::1 ----------
+REQUEST URI : /ruperbazar/index.php?route=account/account
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\ruperbazar\vqmod/xml/cookie_low.xml
+   id        : EU Cookie Law - top, bottom, floating
+   version   : 
+   vqmver    : 2.X
+   author    : arveo
+
+File Name    : catalog/view/theme/*/template/common/footer.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): </footer>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2016-05-13 13:00:06 ~ IP : ::1 ----------
+REQUEST URI : /ruperbazar/index.php?route=account/account
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\ruperbazar\vqmod/xml/cookie_low.xml
+   id        : EU Cookie Law - top, bottom, floating
+   version   : 
+   vqmver    : 2.X
+   author    : arveo
+
+File Name    : catalog/view/theme/*/template/common/footer.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): </footer>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2016-05-13 13:46:44 ~ IP : ::1 ----------
+REQUEST URI : /ruperbazar/
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\ruperbazar\vqmod/xml/cookie_low.xml
+   id        : EU Cookie Law - top, bottom, floating
+   version   : 
+   vqmver    : 2.X
+   author    : arveo
+
+File Name    : catalog/view/theme/*/template/common/footer.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): </footer>
+
+----------------------------------------------------------------------
+
+

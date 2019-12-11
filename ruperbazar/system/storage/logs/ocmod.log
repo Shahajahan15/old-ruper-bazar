@@ -1,0 +1,260 @@
+2016-05-11 10:45:23 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+MOD: Advanced Newsletter Subscribe PRO
+FILE: catalog/controller/common/header.php
+CODE: public function index() {
+LINE: 8
+FILE: admin/controller/marketing/contact.php
+CODE: $results = $this->model_sale_customer->getCustomers($customer_data);
+NOT FOUND!
+FILE: admin/controller/module/account.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 17
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/advanced_newsletter.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 17
+REGEX: ~\$template(.*?)=(.*?)'(.*?)';~
+LINE: 113
+CODE: private function _updateStatus($post)
+LINE: 304
+FILE: admin/controller/module/affiliate.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 17
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/amazon_button.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 17
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/amazon_login.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 21
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/amazon_pay.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 22
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/banner.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 17
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/bestseller.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 17
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/carousel.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 17
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/category.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 17
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/ebay_listing.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 17
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/featured.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 17
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/filter.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 17
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/google_hangouts.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 17
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/html.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 17
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/information.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 17
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/latest.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 17
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/manufacturers.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 17
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/newsletters.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 17
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/pp_button.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 17
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/pp_login.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 19
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/simple_blog.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 63
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/simple_blog_category.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 63
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/slideshow.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 17
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/so_basic_products.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 27
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/so_categories.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 16
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/so_category_slider.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 27
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/so_deals.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 27
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/so_extra_slider.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 32
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/so_filter_shop_by.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 37
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/so_latest_blog.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 47
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/so_listing_tabs.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 16
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/so_megamenu.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+NOT FOUND!
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/so_searchpro.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 17
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/so_super_category.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 17
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/soconfig.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+NOT FOUND!
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/special.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 17
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+FILE: admin/controller/module/store.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 17
+NOT FOUND!
+CODE: private function _updateStatus($post)
+NOT FOUND!
+----------------------------------------------------------------
+MOD: Advanced Newsletter Subscribe PRO
+FILE: admin/model/module/adv_newsletter.php
+CODE: public function getEmails($data = array()) {
+LINE: 21
+----------------------------------------------------------------

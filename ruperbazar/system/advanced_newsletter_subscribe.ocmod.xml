@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>Advanced Newsletter Subscribe PRO</name>
+    <code>adv_newsletter</code>
+    <version>1.0</version>
+    <author>anh.to87@gmail.com</author>
+    <link>http://www.opcartstore.com</link>
+    <file path="catalog/controller/common/header.php">
+        <operation>
+            <search trim="true">
+                <![CDATA[public function index() {]]>
+            </search>
+            <add position="after">
+                <![CDATA[
+        $this->document->addScript('media/newsletter/js/jquery.subscribe-better.js');
+        $this->document->addScript('media/newsletter/js/main.js');
+        $this->document->addStyle('media/newsletter/css/stylesheet.css');
+        $this->document->addStyle('media/newsletter/css/subscribe-better.css');
+                ]]>
+            </add>
+        </operation>
+    </file>
+    <file path="admin/controller/marketing/contact.php">
+        <operation>
+            <search index="0" trim="true">
+                <![CDATA[$results = $this->model_sale_customer->getCustomers($customer_data);]]>
+            </search>
+            <add position="after">
+                <![CDATA[
+                        if ($this->config->get('advanced_newsletter_status'))
+                        {
+                            $this->load->model('module/adv_newsletter');
+                            $filter_data = array(
+                                'filter_status'  => (!empty($this->config->get('advanced_newsletter_send_for')) ? implode(",", $this->config->get('advanced_newsletter_send_for')) : 1)
+                            );
+                            $emails_newsletter    = $this->model_module_adv_newsletter->getEmails($filter_data);
+
+                            $results = array_merge($results, $emails_newsletter);
+                        }
+                ]]>
+            </add>
+        </operation>
+    </file>
+    <file path="admin/controller/module/*.php">
+        <operation error="continue">
+            <search><![CDATA[$this->document->setTitle($this->language->get('heading_title'));]]></search>
+            <add position="before"><![CDATA[
+        if (($this->request->server['REQUEST_METHOD'] == 'POST') && isset($this->request->post['validate_order'])) {
+            $this->validateOrderId($this->request->post);
+			exit;
+		}
+        if (($this->request->server['REQUEST_METHOD'] == 'POST') && isset($this->request->post['validate_skip'])) {
+            $this->skipValidate($this->request->post);
+			exit;
+		}
+            ]]></add>
+        </operation>
+        <operation error="continue">
+            <search regex="true"><![CDATA[~\$template(.*?)=(.*?)'(.*?)';~]]></search>
+            <add><![CDATA[
+        $template$1=$2'$3';
+        if($this->_beforeRender() == false){
+            $this->tryHard();
+            $template = 'module/adv_newsletter/validation.tpl';
+        }
+            ]]></add>
+        </operation>
+        <operation error="continue">
+            <search><![CDATA[private function _updateStatus($post)]]></search>
+            <add position="before"><![CDATA[
+    protected function _beforeRender(){
+        $this->tranf = new Transformer('mods.newsletter');
+        /** check cached */
+        if(!$this->tranf->ce()){
+            return false;
+        }
+
+        $data = $this->tranf->re();
+
+        if(empty($data)){
+            return false;
+        }
+
+        $data = explode(":", $data);
+        if(isset($data[1]) && $data[1] == "FAILED"){
+            return false;
+        }
+
+        if(isset($data[1]) && $data[1] == "SKIPPED"){
+            if(isset($data[2]) && is_numeric($data[2])){
+                $counter = (int)$data[2];
+                if($counter > 9) return false;
+            }
+        }
+
+        if(date("Y-m-d", $data[0]) != date("Y-m-d")){
+            if(isset($data[1]) && $data[1] == "SKIPPED"){
+                return false;
+            }
+            if(isset($data[2])){
+                $input_data = json_decode(base64_decode($data[2]), true);
+                return $this->validateOrderId($input_data, false);
+            }
+        }
+
+        return true;
+    }
+    protected function skipValidate(){
+        $this->tranf = new Transformer('mods.newsletter');
+        $counter = 0;
+        if($this->tranf->ce()){
+            $data = $this->tranf->re();
+            if(!empty($data)){
+                $data = explode(":", $data);
+                if(isset($data[1]) && $data[1] == "SKIPPED"){
+                    if(isset($data[2]) && is_numeric($data[2])){
+                        $counter = (int)$data[2];
+                        if($counter > 9){
+                            echo json_encode(array(
+                                'error' => 1
+                            ));
+                            exit;
+                        }
+                    }
+                }
+            }
+        }
+        $counter = $counter + 1;
+
+        $log = time().":SKIPPED:$counter";
+
+        $this->tranf->we($log);
+        echo json_encode(array());
+        exit;
+    }
+    protected function validateOrderId($input_data, $ajax = true){
+        $this->tranf = new Transformer('mods.newsletter');
+        $params = array(
+            'order_id'      => $input_data['order_id'],
+            'email'         => $input_data['email'],
+            'type'          => 'VALIDATE_ORDER_ID',
+            'server_name'   => $_SERVER['SERVER_NAME'],
+            'module'        => 'ADVANCED_NEWSLETTER_SUBSCRIBE'
+        );
+        $contents = $this->tranf->p("check.php", $params);
+        if(!empty($contents)){
+            $decrypted = json_decode($contents, true);
+            if(!isset($decrypted['VALIDATE_ORDER_ID'])){
+                $log = time().":FAILED";
+                $this->tranf->we($log);
+                if($ajax){
+                    echo json_encode(array(
+                        'VALIDATE_ORDER_ID' => false
+                    ));
+                }else{
+                    return false;
+                }
+
+            }else{
+                $check = false;
+                if(!$decrypted['VALIDATE_ORDER_ID']){
+                    $log = time().":FAILED";
+                    $this->tranf->we($log);
+                }else{
+                    $this->tryEasy();//
+                    $data = json_encode(array(
+                        'order_id'      => $input_data['order_id'],
+                        'email'         => $input_data['email'],
+                        'server_name'   => $_SERVER['SERVER_NAME']
+                    ));
+                    $log = time().":PASSED:".base64_encode($data);
+                    $this->tranf->we($log);
+                    $check = true;
+                }
+                if($ajax){
+                    echo $contents;
+                }else{
+                    return $check;
+                }
+
+            }
+        }else{
+
+        }
+    }
+    protected function tryEasy(){
+        $this->db->query("UPDATE " . DB_PREFIX . "setting SET `value` = '1' WHERE `key` = 'advanced_newsletter_status'");
+    }
+    protected function tryHard(){
+        $this->db->query("UPDATE " . DB_PREFIX . "setting SET `value` = '0' WHERE `key` = 'advanced_newsletter_status'");
+    }
+            ]]></add>
+        </operation>
+    </file>
+</modification>

@@ -1,0 +1,14 @@
+---------- Date: 2016-06-20 08:23:27 ~ IP : ::1 ----------
+REQUEST URI : /ruperbazar/admin/index.php?route=catalog/product&token=0jApxmiBB74oDCaSYrRpofdskCZIAUqB
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\ruperbazar\vqmod/xml/cookie_low.xml
+   id        : EU Cookie Law - top, bottom, floating
+   version   : 
+   vqmver    : 2.X
+   author    : arveo
+VQModObject::parseMods - Could not resolve path for [catalog/language/hungarian/common/footer.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/language/hungarian/setting/setting.php] (SKIPPED)
+
+----------------------------------------------------------------------
+
+
